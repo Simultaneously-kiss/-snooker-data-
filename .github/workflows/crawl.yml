@@ -19,11 +19,8 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install Playwright
-        run: |
-          pip install playwright
-          playwright install chromium
-          playwright install-deps chromium
+      - name: Install dependencies
+        run: pip install httpx selectolax
 
       - name: Run crawler
         run: python crawler/main.py
