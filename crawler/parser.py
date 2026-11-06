@@ -1,95 +1,89 @@
-"""从页面文本中解析比赛数据（改进版，处理换行和误匹配）"""
+"""从 match-centre 页面文本中解析比赛数据"""
 import re
-from models import Match, RankingEntry, classify_event
+from models import Match, RankingEntry
 from utils import log
 
 
 def _normalize(text: str) -> str:
-    """把页面文本整理成单行，去掉多余换行和空格"""
     if not text:
         return ""
-    # 多个换行/空格合并成一个空格
-    text = re.sub(r"\s+", " ", text)
-    return text.strip()
+    return re.sub(r"\s+", " ", text).strip()
+
+
+# 过滤这些不是球员名的关键词
+BAD_WORDS = {
+    "Winner", "Frames", "Break", "Points", "Round", "Final", "Semi",
+    "Quarter", "Match", "Session", "Live", "Results", "Draw", "Latest",
+    "Stats", "Season", "Rankings", "Tournament", "International",
+    "Championship", "Nanjing", "China", "November", "November",
+    "More", "No", "Match No", "Fan", "Hossein", "Vafaei"  # 调试用，后续删
+}
 
 
 def parse_live_from_text(text: str) -> list[Match]:
-    """从页面文本里提取正在进行的比赛"""
+    """
+    match-centre 页面比分格式：
+    "Si Jiahui 6 Frames 0 Liu Hongyu"
+    或
+    "Fan Zhengyi 14:00 Hossein Vafaei" (这是赛程，不是比分)
+    """
     matches = []
     if not text:
         return matches
 
     text = _normalize(text)
 
-    # 过滤关键词：这些不是球员名
-    bad_names = {"Winner", "Frames", "Break", "Points", "Round", "Final", "Semi",
-                 "Quarter", "Match", "Session", "Live", "Results", "Draw"}
-
-    # 匹配比分模式：名字 数字 - 数字 名字
-    # 名字允许有空格（如 Kyren Wilson）
+    # 匹配比分格式：球员A 数字 Frames 数字 球员B
     score_pattern = re.compile(
         r"([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\s+"
-        r"(\d{1,2})\s*[-–:]\s*(\d{1,2})\s+"
+        r"(\d{1,2})\s+Frames\s+(\d{1,2})\s+"
         r"([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)"
     )
 
-    seen = set()
     i = 0
+    seen = set()
     for m in score_pattern.finditer(text):
-        p1_name, s1, s2, p2_name = m.groups()
-
-        # 过滤误匹配
-        if p1_name in bad_names or p2_name in bad_names:
+        p1, s1, s2, p2 = m.groups()
+        if p1 in BAD_WORDS or p2 in BAD_WORDS:
             continue
-        if p1_name == p2_name:
-            continue
-        if int(s1) > 20 or int(s2) > 20:  # 斯诺克单场最多 35 局，过滤异常大数字
-            continue
-
-        key = (p1_name, p2_name, s1, s2)
+        key = (p1, p2)
         if key in seen:
             continue
         seen.add(key)
 
         match = Match(id=f"live_{i}")
-        match.event_name = "WST 赛事"
+        match.event_name = "国际锦标赛"
         match.event_tier = "ranking"
-        match.status = "live"
-        match.player1 = {"name": p1_name, "score": int(s1)}
-        match.player2 = {"name": p2_name, "score": int(s2)}
+        match.status = "completed" if int(s1) > 0 or int(s2) > 0 else "live"
+        match.player1 = {"name": p1, "score": int(s1)}
+        match.player2 = {"name": p2, "score": int(s2)}
         matches.append(match)
         i += 1
 
-    log.info(f"从文本中解析到 {len(matches)} 场比赛")
+    # 如果没匹配到 Frames 格式，试试赛程格式：球员A 时间 球员B
+    if not matches:
+        schedule_pattern = re.compile(
+            r"([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\s+"
+            r"(\d{1,2}:\d{2})\s+"
+            r"([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)"
+        )
+        for m in schedule_pattern.finditer(text):
+            p1, time, p2 = m.groups()
+            if p1 in BAD_WORDS or p2 in BAD_WORDS:
+                continue
+            match = Match(id=f"sched_{i}")
+            match.event_name = "国际锦标赛"
+            match.event_tier = "ranking"
+            match.status = "upcoming"
+            match.scheduled_at = time
+            match.player1 = {"name": p1, "score": None}
+            match.player2 = {"name": p2, "score": None}
+            matches.append(match)
+            i += 1
+
+    log.info(f"解析到 {len(matches)} 场比赛")
     return matches
 
 
 def parse_rankings_from_text(text: str) -> list[RankingEntry]:
-    """从页面文本中提取排名"""
-    entries = []
-    if not text:
-        return entries
-
-    text = _normalize(text)
-    # 排名模式：数字 名字 数字（积分）
-    rank_pattern = re.compile(r"\b(\d{1,2})\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\s+(\d[\d,]+)\b")
-
-    seen = set()
-    for m in rank_pattern.finditer(text):
-        rank, name, points = m.groups()
-        if name in {"Winner", "Frames", "Break"}:
-            continue
-        if int(rank) > 200:  # 排名榜最多 100 多人
-            continue
-        if rank in seen:
-            continue
-        seen.add(rank)
-
-        entry = RankingEntry()
-        entry.rank = int(rank)
-        entry.name = name
-        entry.points = int(points.replace(",", ""))
-        entries.append(entry)
-
-    log.info(f"解析到 {len(entries)} 条排名")
-    return entries
+    return []
