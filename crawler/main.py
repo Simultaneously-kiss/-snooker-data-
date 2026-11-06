@@ -1,6 +1,6 @@
 """爬虫主入口"""
 from utils import DATA_DIR, save_json, now_iso, log
-from snooker_org import fetch_live_html, fetch_rankings_html
+from wst import fetch_live_html, fetch_rankings_html
 from parser import parse_live_from_html, parse_rankings_from_html
 
 
