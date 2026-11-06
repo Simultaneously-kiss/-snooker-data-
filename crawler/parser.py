@@ -5,7 +5,7 @@
    F12 检查元素，调整下面的选择器即可。
 """
 import re
-from selectolax.parser import HTMLParser
+from selectolax.lexbor import LexborHTMLParser as HTMLParser
 
 from models import Match, PlayerScore, RankingEntry, classify_event
 from utils import log
