@@ -1,19 +1,6 @@
 {
   "season": "2024/25",
   "type": "main",
-  "updated_at": "2025-11-05T12:00:00Z",
-  "entries": [
-    { "rank": 1, "previous_rank": 1, "player_id": "p_001", "name": "R. O'Sullivan", "nationality": "England", "points": 850000, "tournaments_played": 12 },
-    { "rank": 2, "previous_rank": 3, "player_id": "p_002", "name": "J. Trump", "nationality": "England", "points": 720000, "tournaments_played": 15 },
-    { "rank": 3, "previous_rank": 2, "player_id": "p_003", "name": "L. Brecel", "nationality": "Belgium", "points": 680000, "tournaments_played": 16 },
-    { "rank": 4, "previous_rank": 4, "player_id": "p_004", "name": "M. Selby", "nationality": "England", "points": 610000, "tournaments_played": 14 },
-    { "rank": 5, "previous_rank": 6, "player_id": "p_005", "name": "N. Robertson", "nationality": "Australia", "points": 580000, "tournaments_played": 13 },
-    { "rank": 6, "previous_rank": 5, "player_id": "p_006", "name": "K. Wilson", "nationality": "England", "points": 540000, "tournaments_played": 15 },
-    { "rank": 7, "previous_rank": 7, "player_id": "p_007", "name": "Z. Williams", "nationality": "Wales", "points": 490000, "tournaments_played": 14 },
-    { "rank": 8, "previous_rank": 9, "player_id": "p_008", "name": "J. Higgins", "nationality": "Scotland", "points": 460000, "tournaments_played": 12 },
-    { "rank": 9, "previous_rank": 8, "player_id": "p_009", "name": "S. Bingham", "nationality": "England", "points": 430000, "tournaments_played": 16 },
-    { "rank": 10, "previous_rank": 11, "player_id": "p_010", "name": "Ding Junhui", "nationality": "China", "points": 380000, "tournaments_played": 13 },
-    { "rank": 11, "previous_rank": 10, "player_id": "p_011", "name": "T. Murphy", "nationality": "Ireland", "points": 360000, "tournaments_played": 14 },
-    { "rank": 12, "previous_rank": 12, "player_id": "p_012", "name": "R. Williams", "nationality": "Wales", "points": 320000, "tournaments_played": 15 }
-  ]
+  "updated_at": "2026-11-06T11:42:00.281150+00:00",
+  "entries": []
 }

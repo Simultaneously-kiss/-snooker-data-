@@ -1,29 +1,4 @@
 {
-  "last_updated": "2025-11-06T10:00:00Z",
-  "matches": [
-    {
-      "id": "demo_live_1",
-      "event_name": "英锦赛",
-      "event_tier": "triple_crown",
-      "round": "1/8决赛",
-      "status": "live",
-      "session": "第2阶段",
-      "best_of": 19,
-      "player1": {
-        "id": "p_123",
-        "name": "J. Trump",
-        "full_name": "Judd Trump",
-        "score": 5
-      },
-      "player2": {
-        "id": "p_456",
-        "name": "R. O'Sullivan",
-        "full_name": "Ronnie O'Sullivan",
-        "score": 4
-      },
-      "highest_break": 138,
-      "highest_break_player": "p_123",
-      "started_at": "2025-11-06T14:00:00Z"
-    }
-  ]
+  "last_updated": "2026-11-06T11:42:00.279574+00:00",
+  "matches": []
 }
