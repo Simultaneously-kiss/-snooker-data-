@@ -1,151 +1,88 @@
 {
-  "last_updated": "2026-11-06T12:12:48.571714+00:00",
+  "last_updated": "2026-11-06T12:22:05.934201+00:00",
   "matches": [
     {
-      "id": "live_0",
-      "event_name": "WST 赛事",
+      "id": "sched_0",
+      "event_name": "国际锦标赛",
       "event_tier": "ranking",
       "round": "",
-      "status": "live",
+      "status": "upcoming",
       "session": "",
       "best_of": 0,
       "player1": {
         "name": "Mark Selby",
-        "score": 13
+        "score": null
       },
       "player2": {
         "name": "Alfie Burden",
-        "score": 0
+        "score": null
       },
       "highest_break": null,
       "highest_break_player": "",
-      "scheduled_at": "",
+      "scheduled_at": "13:00",
       "started_at": ""
     },
     {
-      "id": "live_1",
-      "event_name": "WST 赛事",
+      "id": "sched_1",
+      "event_name": "国际锦标赛",
       "event_tier": "ranking",
       "round": "",
-      "status": "live",
+      "status": "upcoming",
       "session": "",
       "best_of": 0,
       "player1": {
         "name": "Barry Hawkins",
-        "score": 14
+        "score": null
       },
       "player2": {
         "name": "Chris Wakelin",
-        "score": 0
+        "score": null
       },
       "highest_break": null,
       "highest_break_player": "",
-      "scheduled_at": "",
+      "scheduled_at": "14:00",
       "started_at": ""
     },
     {
-      "id": "live_2",
-      "event_name": "WST 赛事",
+      "id": "sched_2",
+      "event_name": "国际锦标赛",
       "event_tier": "ranking",
       "round": "",
-      "status": "live",
+      "status": "upcoming",
       "session": "",
       "best_of": 0,
       "player1": {
         "name": "Neil Robertson",
-        "score": 13
+        "score": null
       },
       "player2": {
         "name": "Panchaya Channoi",
-        "score": 0
+        "score": null
       },
       "highest_break": null,
       "highest_break_player": "",
-      "scheduled_at": "",
+      "scheduled_at": "13:00",
       "started_at": ""
     },
     {
-      "id": "live_3",
-      "event_name": "WST 赛事",
+      "id": "sched_3",
+      "event_name": "国际锦标赛",
       "event_tier": "ranking",
       "round": "",
-      "status": "live",
+      "status": "upcoming",
       "session": "",
       "best_of": 0,
       "player1": {
         "name": "Judd Trump",
-        "score": 14
+        "score": null
       },
       "player2": {
         "name": "Jak Jones",
-        "score": 0
+        "score": null
       },
       "highest_break": null,
       "highest_break_player": "",
-      "scheduled_at": "",
-      "started_at": ""
-    },
-    {
-      "id": "live_4",
-      "event_name": "WST 赛事",
-      "event_tier": "ranking",
-      "round": "",
-      "status": "live",
-      "session": "",
-      "best_of": 0,
-      "player1": {
-        "name": "Shaun Murphy",
-        "score": 13
-      },
-      "player2": {
-        "name": "Ronnie",
-        "score": 0
-      },
-      "highest_break": null,
-      "highest_break_player": "",
-      "scheduled_at": "",
-      "started_at": ""
-    },
-    {
-      "id": "live_5",
-      "event_name": "WST 赛事",
-      "event_tier": "ranking",
-      "round": "",
-      "status": "live",
-      "session": "",
-      "best_of": 0,
-      "player1": {
-        "name": "Wu Yize",
-        "score": 14
-      },
-      "player2": {
-        "name": "Chang Bingyu",
-        "score": 0
-      },
-      "highest_break": null,
-      "highest_break_player": "",
-      "scheduled_at": "",
-      "started_at": ""
-    },
-    {
-      "id": "live_6",
-      "event_name": "WST 赛事",
-      "event_tier": "ranking",
-      "round": "",
-      "status": "live",
-      "session": "",
-      "best_of": 0,
-      "player1": {
-        "name": "Zhao Xintong",
-        "score": 13
-      },
-      "player2": {
-        "name": "Thepchaiya Un",
-        "score": 0
-      },
-      "highest_break": null,
-      "highest_break_player": "",
-      "scheduled_at": "",
+      "scheduled_at": "14:00",
       "started_at": ""
     }
   ]
