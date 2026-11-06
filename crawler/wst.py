@@ -1,36 +1,33 @@
-"""wst.tv 页面抓取（Playwright 版，直接访问 match-centre）"""
-from playwright.sync_api import sync_playwright
+"""snooker.org 页面抓取（传统 HTML，好爬）"""
+import httpx
+import time
 from utils import log
 
-# 当前正在进行的赛事：国际锦标赛
-# 后续有新赛事时改这里的 UUID 就行
-MATCH_CENTRE_URL = "https://www.wst.tv/match-centre/2689dd23-0001-41e3-8408-e047bb361803"
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+}
+
+# snooker.org 的页面 URL
+LIVE_URL = "https://snooker.org/live.htm"
+RESULTS_URL = "https://snooker.org/results.htm"
+RANKINGS_URL = "https://snooker.org/rankings.htm"
 
 
-def fetch_page_text(url: str, wait_ms: int = 3000) -> str | None:
-    """用 headless Chrome 打开页面，返回页面文本"""
+def fetch_page(url: str) -> str | None:
     try:
-        with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
-            page = browser.new_page(
-                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
-            )
-            log.info(f"打开页面: {url}")
-            page.goto(url, wait_until="networkidle", timeout=30000)
-            page.wait_for_timeout(wait_ms)
-            text = page.inner_text("body")
-            browser.close()
-            return text
+        log.info(f"抓取: {url}")
+        resp = httpx.get(url, headers=HEADERS, timeout=30.0, follow_redirects=True)
+        resp.raise_for_status()
+        time.sleep(3)  # 礼貌延迟
+        return resp.text
     except Exception as e:
-        log.error(f"打开页面失败 {url}: {e}")
+        log.error(f"抓取失败 {url}: {e}")
         return None
 
 
-def fetch_live_text() -> str | None:
-    """抓取赛事中心页面文本（含比分）"""
-    return fetch_page_text(MATCH_CENTRE_URL)
+def fetch_live_html() -> str | None:
+    return fetch_page(LIVE_URL)
 
 
-def fetch_rankings_text() -> str | None:
-    """排名页暂时返回空，后续再调"""
-    return None
+def fetch_rankings_html() -> str | None:
+    return fetch_page(RANKINGS_URL)
