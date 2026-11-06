@@ -1,0 +1,414 @@
+/* ========== 主题变量 ========== */
+:root {
+  --color-primary: #1A3D2F;    /* 深墨绿，球台呢 */
+  --color-primary-light: #2A5D4F;
+  --color-gold: #D4AF37;       /* 金色 */
+  --color-live: #36CFC9;       /* 进行中 */
+  --color-upcoming: #FF9500;   /* 即将开赛 */
+  --color-done: #888888;       /* 已结束 */
+  --color-bg: #F7F7F7;
+  --color-card: #FFFFFF;
+  --color-text: #222222;
+  --color-text-2: #666666;
+  --color-border: #E5E5E5;
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --radius: 8px;
+}
+
+/* ========== 基础重置 ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* ========== 顶部导航 ========== */
+.navbar {
+  background: var(--color-card);
+  box-shadow: var(--shadow-card);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0 20px;
+}
+
+.navbar-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 17px;
+}
+
+.navbar-logo-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 24px;
+}
+
+.navbar-links a {
+  color: var(--color-text-2);
+  font-size: 14px;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.navbar-links a.active,
+.navbar-links a:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-gold);
+}
+
+/* ========== 容器 ========== */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+
+/* ========== 区块标题 ========== */
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 24px 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-title .more {
+  font-size: 13px;
+  color: var(--color-primary);
+  font-weight: 400;
+}
+
+/* ========== 比赛卡片 ========== */
+.match-card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: transform 0.15s;
+}
+
+.match-card:hover {
+  transform: translateY(-1px);
+}
+
+.match-card.live {
+  border-left: 3px solid var(--color-live);
+}
+
+.match-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--color-text-2);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.live {
+  background: rgba(54, 207, 201, 0.12);
+  color: #0D9488;
+}
+
+.status-badge.upcoming {
+  background: rgba(255, 149, 0, 0.12);
+  color: #C2620A;
+}
+
+.status-badge.completed {
+  background: rgba(136, 136, 136, 0.12);
+  color: var(--color-done);
+}
+
+.event-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.event-tag.triple_crown {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.event-tag.ranking {
+  background: rgba(26, 61, 47, 0.1);
+  color: var(--color-primary);
+}
+
+.event-tag.invitation {
+  background: rgba(212, 175, 55, 0.15);
+  color: #8A6D1A;
+}
+
+.event-tag.qualifier {
+  background: #F0F0F0;
+  color: var(--color-text-2);
+}
+
+/* ========== 比分区 ========== */
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+}
+
+.player-name {
+  font-size: 16px;
+  font-weight: 500;
+  flex: 1;
+}
+
+.player-name.winner {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.player-name.loser {
+  color: var(--color-done);
+  text-decoration: line-through;
+}
+
+.score-num {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text);
+  min-width: 32px;
+  text-align: center;
+}
+
+.score-num.winner {
+  color: var(--color-primary);
+}
+
+.match-footer {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+  font-size: 12px;
+  color: var(--color-text-2);
+  display: flex;
+  gap: 16px;
+}
+
+/* ========== 正在比赛置顶横幅 ========== */
+.live-banner {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0F2A1F 100%);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.live-banner .match-header {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.live-banner .status-badge.live {
+  background: rgba(54, 207, 201, 0.25);
+  color: #5EEAD4;
+}
+
+.live-banner .player-name {
+  color: #fff;
+}
+
+.live-banner .score-num {
+  color: var(--color-gold);
+  font-size: 32px;
+}
+
+.live-banner .match-footer {
+  border-top-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ========== 骨架屏 ========== */
+.skeleton {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-card);
+}
+
+.skeleton-line {
+  height: 14px;
+  background: #EEE;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-line.short { width: 40%; }
+.skeleton-line.medium { width: 70%; }
+
+@keyframes shimmer {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* ========== 排名表格 ========== */
+.ranking-table-wrap {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  overflow-x: auto;
+}
+
+.ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 560px;
+}
+
+.ranking-table th,
+.ranking-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ranking-table th {
+  background: #FAFAFA;
+  font-weight: 600;
+  color: var(--color-text-2);
+  font-size: 13px;
+}
+
+.ranking-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rank-num {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.rank-change.up { color: var(--color-gold); }
+.rank-change.down { color: var(--color-done); }
+.rank-change.same { color: #BBB; }
+
+/* ========== 标签切换 ========== */
+.tabs {
+  display: flex;
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 4px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--color-text-2);
+  transition: all 0.2s;
+}
+
+.tab-item.active {
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 500;
+}
+
+/* ========== 签表树（简化版） ========== */
+.draw-round {
+  margin-bottom: 24px;
+}
+
+.draw-round-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-2);
+  margin-bottom: 10px;
+}
+
+.draw-match {
+  background: var(--color-card);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  box-shadow: var(--shadow-card);
+  font-size: 14px;
+}
+
+/* ========== 页脚 ========== */
+.footer {
+  text-align: center;
+  padding: 32px 16px;
+  font-size: 12px;
+  color: var(--color-text-2);
+  line-height: 1.8;
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 640px) {
+  .navbar-links {
+    gap: 16px;
+  }
+  .navbar-links a {
+    font-size: 13px;
+  }
+  .container {
+    padding: 16px 12px;
+  }
+  .score-num {
+    font-size: 20px;
+  }
+  .live-banner .score-num {
+    font-size: 26px;
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界排名 - 斯诺克数据</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <div class="navbar-logo">
+        <span class="navbar-logo-dot"></span>
+        斯诺克数据
+      </div>
+      <div class="navbar-links">
+        <a href="./index.html">首页</a>
+        <a href="./schedule.html">赛程签表</a>
+        <a href="./ranking.html" class="active">排名</a>
+        <a href="./about.html">关于</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="section-title" style="margin-top:0;">
+      WST 两年滚动世界排名
+      <span style="font-size:12px; font-weight:400; color:#999;" id="ranking-update">加载中...</span>
+    </div>
+
+    <div class="ranking-table-wrap">
+      <table class="ranking-table">
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>球员</th>
+            <th>国籍</th>
+            <th>积分</th>
+            <th>升降</th>
+            <th>参赛</th>
+          </tr>
+        </thead>
+        <tbody id="ranking-body">
+          <tr><td colspan="6" style="text-align:center; color:#999; padding:32px;">加载中...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>数据来源：WST 官方排名（公开页面整理）</p>
+    <p>非官方斯诺克数据工具 · 不持有任何赛事版权</p>
+  </footer>
+
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/ranking.js"></script>
+</body>
+</html>

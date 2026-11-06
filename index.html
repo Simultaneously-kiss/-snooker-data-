@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>斯诺克数据 - 非官方球迷工具</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <div class="navbar-logo">
+        <span class="navbar-logo-dot"></span>
+        斯诺克数据
+      </div>
+      <div class="navbar-links">
+        <a href="./index.html" class="active">首页</a>
+        <a href="./schedule.html">赛程签表</a>
+        <a href="./ranking.html">排名</a>
+        <a href="./about.html">关于</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- 更新时间 -->
+    <div style="text-align:right; font-size:12px; color:#999; margin-bottom:8px;" id="update-time">
+      数据加载中...
+    </div>
+
+    <!-- 正在比赛置顶 -->
+    <div id="live-banner"></div>
+
+    <!-- 今日赛程 -->
+    <div class="section-title">
+      今日赛程
+      <a href="./schedule.html" class="more">查看全部 ›</a>
+    </div>
+    <div id="today-list"></div>
+
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <p>非官方斯诺克数据工具 · 数据来自 wst.tv 公开页面整理</p>
+    <p>不提供直播/视频回放 · 观赛请前往 WST 官方平台</p>
+  </footer>
+
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/home.js"></script>
+</body>
+</html>

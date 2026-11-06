@@ -1,0 +1,45 @@
+{
+  "last_updated": "2025-11-06T10:00:00Z",
+  "date": "2025-11-06",
+  "matches": [
+    {
+      "id": "demo_today_1",
+      "event_name": "英锦赛",
+      "event_tier": "triple_crown",
+      "round": "1/8决赛",
+      "status": "upcoming",
+      "session": "",
+      "best_of": 19,
+      "player1": { "name": "N. Robertson", "score": null },
+      "player2": { "name": "J. Higgins", "score": null },
+      "highest_break": null,
+      "scheduled_at": "17:00"
+    },
+    {
+      "id": "demo_today_2",
+      "event_name": "英锦赛",
+      "event_tier": "triple_crown",
+      "round": "1/8决赛",
+      "status": "upcoming",
+      "session": "",
+      "best_of": 19,
+      "player1": { "name": "M. Selby", "score": null },
+      "player2": { "name": "L. Brecel", "score": null },
+      "highest_break": null,
+      "scheduled_at": "21:00"
+    },
+    {
+      "id": "demo_today_3",
+      "event_name": "北爱尔兰公开赛",
+      "event_tier": "ranking",
+      "round": "第2轮",
+      "status": "completed",
+      "session": "",
+      "best_of": 9,
+      "player1": { "name": "Ding Junhui", "score": 5 },
+      "player2": { "name": "Tian Pengfei", "score": 2 },
+      "highest_break": 127,
+      "scheduled_at": ""
+    }
+  ]
+}
