@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-06T12:03:20.109267+00:00",
+  "last_updated": "2026-11-06T12:12:48.571714+00:00",
   "matches": [
     {
       "id": "live_0",
@@ -10,11 +10,11 @@
       "session": "",
       "best_of": 0,
       "player1": {
-        "name": "Kyren\n\nWilson",
-        "score": 6
+        "name": "Mark Selby",
+        "score": 13
       },
       "player2": {
-        "name": "Winner",
+        "name": "Alfie Burden",
         "score": 0
       },
       "highest_break": null,
@@ -31,11 +31,11 @@
       "session": "",
       "best_of": 0,
       "player1": {
-        "name": "Mark\n\nSelby",
-        "score": 13
+        "name": "Barry Hawkins",
+        "score": 14
       },
       "player2": {
-        "name": "Alfie\n\nBurden",
+        "name": "Chris Wakelin",
         "score": 0
       },
       "highest_break": null,
@@ -52,11 +52,11 @@
       "session": "",
       "best_of": 0,
       "player1": {
-        "name": "Barry\n\nHawkins",
-        "score": 14
+        "name": "Neil Robertson",
+        "score": 13
       },
       "player2": {
-        "name": "Chris\n\nWakelin",
+        "name": "Panchaya Channoi",
         "score": 0
       },
       "highest_break": null,
@@ -73,11 +73,11 @@
       "session": "",
       "best_of": 0,
       "player1": {
-        "name": "Neil\n\nRobertson",
-        "score": 13
+        "name": "Judd Trump",
+        "score": 14
       },
       "player2": {
-        "name": "Panchaya\n\nChannoi",
+        "name": "Jak Jones",
         "score": 0
       },
       "highest_break": null,
@@ -94,11 +94,11 @@
       "session": "",
       "best_of": 0,
       "player1": {
-        "name": "Judd\n\nTrump",
-        "score": 14
+        "name": "Shaun Murphy",
+        "score": 13
       },
       "player2": {
-        "name": "Jak\n\nJones",
+        "name": "Ronnie",
         "score": 0
       },
       "highest_break": null,
@@ -115,11 +115,11 @@
       "session": "",
       "best_of": 0,
       "player1": {
-        "name": "Shaun\n\nMurphy",
-        "score": 13
+        "name": "Wu Yize",
+        "score": 14
       },
       "player2": {
-        "name": "Ronnie",
+        "name": "Chang Bingyu",
         "score": 0
       },
       "highest_break": null,
@@ -136,32 +136,11 @@
       "session": "",
       "best_of": 0,
       "player1": {
-        "name": "Wu\n\nYize",
-        "score": 14
-      },
-      "player2": {
-        "name": "Chang\n\nBingyu",
-        "score": 0
-      },
-      "highest_break": null,
-      "highest_break_player": "",
-      "scheduled_at": "",
-      "started_at": ""
-    },
-    {
-      "id": "live_7",
-      "event_name": "WST 赛事",
-      "event_tier": "ranking",
-      "round": "",
-      "status": "live",
-      "session": "",
-      "best_of": 0,
-      "player1": {
-        "name": "Zhao\n\nXintong",
+        "name": "Zhao Xintong",
         "score": 13
       },
       "player2": {
-        "name": "Thepchaiya\n\nUn",
+        "name": "Thepchaiya Un",
         "score": 0
       },
       "highest_break": null,
