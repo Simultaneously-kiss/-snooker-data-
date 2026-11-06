@@ -1,5 +1,174 @@
 {
-  "last_updated": "2026-11-06T11:42:00.280079+00:00",
+  "last_updated": "2026-11-06T12:03:25.385453+00:00",
   "date": "2026-11-06",
-  "matches": []
+  "matches": [
+    {
+      "id": "live_0",
+      "event_name": "WST 赛事",
+      "event_tier": "ranking",
+      "round": "",
+      "status": "live",
+      "session": "",
+      "best_of": 0,
+      "player1": {
+        "name": "Kyren\n\nWilson",
+        "score": 6
+      },
+      "player2": {
+        "name": "Winner",
+        "score": 0
+      },
+      "highest_break": null,
+      "highest_break_player": "",
+      "scheduled_at": "",
+      "started_at": ""
+    },
+    {
+      "id": "live_1",
+      "event_name": "WST 赛事",
+      "event_tier": "ranking",
+      "round": "",
+      "status": "live",
+      "session": "",
+      "best_of": 0,
+      "player1": {
+        "name": "Mark\n\nSelby",
+        "score": 13
+      },
+      "player2": {
+        "name": "Alfie\n\nBurden",
+        "score": 0
+      },
+      "highest_break": null,
+      "highest_break_player": "",
+      "scheduled_at": "",
+      "started_at": ""
+    },
+    {
+      "id": "live_2",
+      "event_name": "WST 赛事",
+      "event_tier": "ranking",
+      "round": "",
+      "status": "live",
+      "session": "",
+      "best_of": 0,
+      "player1": {
+        "name": "Barry\n\nHawkins",
+        "score": 14
+      },
+      "player2": {
+        "name": "Chris\n\nWakelin",
+        "score": 0
+      },
+      "highest_break": null,
+      "highest_break_player": "",
+      "scheduled_at": "",
+      "started_at": ""
+    },
+    {
+      "id": "live_3",
+      "event_name": "WST 赛事",
+      "event_tier": "ranking",
+      "round": "",
+      "status": "live",
+      "session": "",
+      "best_of": 0,
+      "player1": {
+        "name": "Neil\n\nRobertson",
+        "score": 13
+      },
+      "player2": {
+        "name": "Panchaya\n\nChannoi",
+        "score": 0
+      },
+      "highest_break": null,
+      "highest_break_player": "",
+      "scheduled_at": "",
+      "started_at": ""
+    },
+    {
+      "id": "live_4",
+      "event_name": "WST 赛事",
+      "event_tier": "ranking",
+      "round": "",
+      "status": "live",
+      "session": "",
+      "best_of": 0,
+      "player1": {
+        "name": "Judd\n\nTrump",
+        "score": 14
+      },
+      "player2": {
+        "name": "Jak\n\nJones",
+        "score": 0
+      },
+      "highest_break": null,
+      "highest_break_player": "",
+      "scheduled_at": "",
+      "started_at": ""
+    },
+    {
+      "id": "live_5",
+      "event_name": "WST 赛事",
+      "event_tier": "ranking",
+      "round": "",
+      "status": "live",
+      "session": "",
+      "best_of": 0,
+      "player1": {
+        "name": "Shaun\n\nMurphy",
+        "score": 13
+      },
+      "player2": {
+        "name": "Ronnie",
+        "score": 0
+      },
+      "highest_break": null,
+      "highest_break_player": "",
+      "scheduled_at": "",
+      "started_at": ""
+    },
+    {
+      "id": "live_6",
+      "event_name": "WST 赛事",
+      "event_tier": "ranking",
+      "round": "",
+      "status": "live",
+      "session": "",
+      "best_of": 0,
+      "player1": {
+        "name": "Wu\n\nYize",
+        "score": 14
+      },
+      "player2": {
+        "name": "Chang\n\nBingyu",
+        "score": 0
+      },
+      "highest_break": null,
+      "highest_break_player": "",
+      "scheduled_at": "",
+      "started_at": ""
+    },
+    {
+      "id": "live_7",
+      "event_name": "WST 赛事",
+      "event_tier": "ranking",
+      "round": "",
+      "status": "live",
+      "session": "",
+      "best_of": 0,
+      "player1": {
+        "name": "Zhao\n\nXintong",
+        "score": 13
+      },
+      "player2": {
+        "name": "Thepchaiya\n\nUn",
+        "score": 0
+      },
+      "highest_break": null,
+      "highest_break_player": "",
+      "scheduled_at": "",
+      "started_at": ""
+    }
+  ]
 }
