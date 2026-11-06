@@ -1,11 +1,13 @@
-"""wst.tv 页面抓取（Playwright headless Chrome 版）"""
+"""wst.tv 页面抓取（Playwright 版，直接访问 match-centre）"""
 from playwright.sync_api import sync_playwright
-from utils import log, now_iso
+from utils import log
 
-# 入口 URL：WST 官网首页，从这里找 live/match-centre 链接
-WST_HOME = "https://www.wst.tv/"
+# 当前正在进行的赛事：国际锦标赛
+# 后续有新赛事时改这里的 UUID 就行
+MATCH_CENTRE_URL = "https://www.wst.tv/match-centre/2689dd23-0001-41e3-8408-e047bb361803"
 
-def fetch_page_text(url: str, wait_selector: str = "body") -> str | None:
+
+def fetch_page_text(url: str, wait_ms: int = 3000) -> str | None:
     """用 headless Chrome 打开页面，返回页面文本"""
     try:
         with sync_playwright() as p:
@@ -15,8 +17,7 @@ def fetch_page_text(url: str, wait_selector: str = "body") -> str | None:
             )
             log.info(f"打开页面: {url}")
             page.goto(url, wait_until="networkidle", timeout=30000)
-            # 等页面渲染完
-            page.wait_for_timeout(2000)
+            page.wait_for_timeout(wait_ms)
             text = page.inner_text("body")
             browser.close()
             return text
@@ -24,19 +25,12 @@ def fetch_page_text(url: str, wait_selector: str = "body") -> str | None:
         log.error(f"打开页面失败 {url}: {e}")
         return None
 
-def fetch_live_text() -> str | None:
-    """抓取正在进行的比赛页面文本"""
-    # 先访问首页，找 Match Centre 链接
-    home_text = fetch_page_text(WST_HOME)
-    if not home_text:
-        return None
 
-    # 尝试直接访问 match-centre 列表页
-    # 如果首页找不到，就用一个已知的进行中赛事 URL
-    # 这里先返回首页文本，后续根据日志调整
-    return home_text
+def fetch_live_text() -> str | None:
+    """抓取赛事中心页面文本（含比分）"""
+    return fetch_page_text(MATCH_CENTRE_URL)
+
 
 def fetch_rankings_text() -> str | None:
-    """抓取排名页面文本"""
-    # WST 排名页 URL 待确认，先试常见路径
-    return fetch_page_text("https://www.wst.tv/rankings/")
+    """排名页暂时返回空，后续再调"""
+    return None
